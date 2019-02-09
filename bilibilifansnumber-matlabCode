@@ -1,0 +1,10 @@
+clc;
+clear;
+tic;
+%网页地址
+WebSite='http://api.bilibili.com/x/relation/stat?vmid=35156038';
+[sourcefile,status]=urlread(WebSite);
+expr1='"follower":([0-9]*)';
+[fansNumber,data_tokens]=regexp(sourcefile,expr1,'match','tokens');
+fansNumber
+toc;
